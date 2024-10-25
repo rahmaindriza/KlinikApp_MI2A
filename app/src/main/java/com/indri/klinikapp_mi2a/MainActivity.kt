@@ -16,20 +16,24 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        //splash screen
-        //handle untuk delay selama bbrp detik
+        // Splash Screen
+        // handle untuk delay selama beberapa detik
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                val intent = Intent(this, StarterPage::class.java)
+                // ini setelah delay akan pindah ke page berikutnya secara otomatis
+                val intent = Intent(this, StarterPageActivity::class.java)
                 startActivity(intent)
-                finish() //agar ketika sudah pindah ke page berikutnya, ini page gak back
+                finish()// agar ketika sudah pindah ke page berikutnya, ini page nya ga back
             }, 3000
         )
 
-        //Task
-        //Splash Screen
-        //Page page start screen --> Klik button get stared
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.imageView2)) { v, insets ->
+        // task:
+        // splash screen
+        // pada page start screen --> klik button get started ini pindah ke login
+        // pada page login, ketika klik tulisan sign up --> ini pindah ke page sign up
+        // pada page sign up, ketika klik login --> pindah ke login
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

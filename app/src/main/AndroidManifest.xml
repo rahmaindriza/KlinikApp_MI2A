@@ -13,13 +13,22 @@
         android:theme="@style/Theme.KlinikApp_MI2A"
         tools:targetApi="31">
         <activity
-            android:name=".item_menuicon"
+            android:name=".StarterPageActivity"
             android:exported="false" />
         <activity
             android:name=".PageRegister"
             android:exported="false" />
         <activity
             android:name=".PageLogin"
+            android:exported="false" />
+        <activity
+            android:name=".PageDoctors"
+            android:exported="false" />
+        <activity
+            android:name=".screen.HomeDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".item_menuicon"
             android:exported="false" />
         <activity
             android:name=".StarterPage"
