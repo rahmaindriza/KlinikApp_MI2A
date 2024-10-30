@@ -22,7 +22,7 @@ object ListDokter {
 
         val item2 = ModelDokter (
             R.drawable.dokter3,
-            "Dr. Rahma Indriza Syafitri",
+            "Dr.Ahmad Fadhila Naufal",
             "Spesialis Bedah Umum",
             "(200)",
             "4.6"
@@ -30,7 +30,7 @@ object ListDokter {
 
         val item3 = ModelDokter (
             R.drawable.dokter4,
-            "Dr. Viona Mahardika Safitri",
+            "Dr. Rahma Indriza Syafitri",
             "Spesialis Anak",
             "(180)",
             "4.9"
@@ -46,7 +46,7 @@ object ListDokter {
 
         val item5 = ModelDokter (
             R.drawable.dokter6,
-            "Dr. Keysya Apriliza",
+            "Dr.Viona Mahardika Safitri",
             "Spesialis Gigi",
             "(170)",
             "4.5"

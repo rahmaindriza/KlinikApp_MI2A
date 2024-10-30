@@ -1,24 +1,28 @@
 package com.indri.klinikapp_mi2a.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.indri.klinikapp_mi2a.PageDetailDoctor
+import com.indri.klinikapp_mi2a.PageDoctors
 import com.indri.klinikapp_mi2a.R
 import com.indri.klinikapp_mi2a.model.ModelDokter
 
 class DokterAdapter (
-    val itemList : ArrayList<ModelDokter>
+    val itemList : ArrayList<ModelDokter>,
+    val getActivity : PageDoctors
 ) : RecyclerView.Adapter<DokterAdapter.MyViewHolder>() {
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var gambarDokter: ImageView
-        var namaDokter: TextView
-        var spesialis: TextView
-        var jumlahRating: TextView
-        var rating: TextView
+    class MyViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
+        var gambarDokter : ImageView
+        var namaDokter : TextView
+        var spesialis : TextView
+        var jumlahRating : TextView
+        var rating : TextView
 
         init {
             gambarDokter = itemView.findViewById(R.id.gambarDokter) as ImageView
@@ -46,5 +50,17 @@ class DokterAdapter (
         holder.spesialis.setText(itemList[position].spesialis)
         holder.jumlahRating.setText(itemList[position].jumlahRating)
         holder.rating.setText(itemList[position].rating)
+
+        holder.itemView.setOnClickListener() {
+            val intent = Intent(getActivity, PageDetailDoctor::class.java)
+            intent.putExtra("gambarDokter", itemList[position].gambarDokter)
+            intent.putExtra("namaDokter", itemList[position].namaDokter)
+            intent.putExtra("spesialis", itemList[position].spesialis)
+            intent.putExtra("jumlahRating", itemList[position].jumlahRating)
+            intent.putExtra("rating", itemList[position].rating)
+
+            getActivity.startActivity(intent)
+        }
     }
+
 }
